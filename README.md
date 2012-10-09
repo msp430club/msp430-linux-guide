@@ -34,6 +34,32 @@ Or, the full syntax for the mspgcc command is:
 
     msp430-gcc -mmcu=msp430g2553 launchpad.c -o launchpad.elf
 
+
+Debugging
+---------
+
+Use mspdebug to program the msp430
+
+    mspdebug rf2500
+
+You should see it connecto to the launchpad. Once it does, use the following commmands to load and run the program:
+
+    erase
+    load launchpad.elf
+    run
+
+You should now see the LEDs blinking alternately red and green like it did when you first got it.
+
+
+Serial Port
+-----------
+
+You can use the serial port in linux as `/dev/ttaACM0`
+
+The screen command works well for two way communications
+
+    screen /dev/ttyACM0 9600
+
 Converting Code Composer Programs
 ---------------------------------
 
